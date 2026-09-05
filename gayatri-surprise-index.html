@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>For Gayatri ❤️</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#fff;background:radial-gradient(circle at 20% 10%,#552276,#17102f 45%,#070611);min-height:100vh}main{max-width:820px;margin:auto;padding:20px}.hero{text-align:center;padding:55px 10px 25px}h1{font-size:clamp(48px,13vw,86px);margin:15px 0;background:linear-gradient(90deg,#ffd2f4,#fff,#cbd6ff);-webkit-background-clip:text;color:transparent}.badge,.card{background:#ffffff10;border:1px solid #ffffff25;backdrop-filter:blur(12px)}.badge{display:inline-block;padding:8px 14px;border-radius:30px}.card{padding:24px;border-radius:24px;margin:18px 0;box-shadow:0 15px 45px #0005}.hidden{display:none}button{border:0;border-radius:14px;padding:13px 17px;margin:7px;color:white;background:linear-gradient(135deg,#a956e8,#ff5fac);font-weight:bold}.gift{text-align:center;font-size:80px;cursor:pointer}.letter{white-space:pre-line;line-height:1.8}.choice{display:block;width:100%;text-align:left;background:#ffffff12;border:1px solid #ffffff20}.result{text-align:center;margin:14px 0;font-size:18px}audio{width:100%;margin-top:15px}.big{text-align:center;font-size:50px}footer{text-align:center;opacity:.5;font-size:13px;margin:35px 0}.star{position:fixed;width:2px;height:2px;background:#fff;border-radius:50%}
+</style></head><body><div id="stars"></div><main>
+<section class="hero"><span class="badge">A little surprise, just for you ✨</span><h1>Gayatri ❤️</h1><p>I may be late… but this comes from the heart.</p></section>
+<div class="card" id="welcome"><h2>🎁 One tiny mystery</h2><p>No birthday date needed. Just open everything slowly. 🥹❤️</p><div class="gift" onclick="openGift()">🎁</div><p style="text-align:center">Tap the gift</p></div>
+<div class="card hidden" id="menu"><h2>✨ Your Little Universe</h2><p>Choose anything you want to open.</p><div style="text-align:center"><button onclick="show('letter')">💌 Love Letter</button><button onclick="show('when')">💖 Open When</button><button onclick="show('universe')">🌌 Little Universe</button><button onclick="show('game')">🎮 Mini Game</button><button onclick="show('song')">🎵 Your Song</button><button onclick="show('final')">🎉 Final Surprise</button></div></div>
+<div class="card hidden" id="letter"><h2>💌 A Letter For You</h2><div class="letter">Gayatri,
+
+I know I'm a little late… okay, maybe more than a little late 😭😂
+And honestly, I don't even remember the date anymore.
+
+But I didn't want that mistake to stop me from making something special for you.
+
+Sometimes dates get forgotten. Moments don't have to be.
+
+So this is my small way of saying:
+You are special, you deserve to be celebrated,
+and I hope this little surprise makes you smile. ❤️
+
+No perfect date. No perfect excuse.
+Just a genuine little “I'm sorry” and a very big “you're important to me.” 🫶
+
+— From someone who really should have remembered the date 😭❤️</div><button onclick="show('menu')">← Back</button></div>
+<div class="card hidden" id="when"><h2>💖 Open When...</h2><button class="choice" onclick="msg('smile')">😊 You need a smile</button><button class="choice" onclick="msg('sad')">🥺 You're having a bad day</button><button class="choice" onclick="msg('miss')">🫶 You miss someone</button><button class="choice" onclick="msg('late')">😂 You remember I forgot your birthday</button><div class="result" id="msg"></div><button onclick="show('menu')">← Back</button></div>
+<div class="card hidden" id="universe"><h2>🌌 Little Universe</h2><p style="line-height:1.8">Imagine a tiny universe where every star is one good thing about you. ✨<br><br>One star for your smile.<br>One for your kindness.<br>One for the way you make ordinary moments feel special.<br>And one extra star… because you deserve it. ❤️</p><div style="text-align:center;font-size:50px">🌙 ✨ ⭐ ✨ 🌙</div><button onclick="show('menu')">← Back</button></div>
+<div class="card hidden" id="game"><h2>🎮 Mini Love Game</h2><p>Three questions. No cheating. 😌</p><div id="qbox"></div><div class="result" id="gameResult"></div><button onclick="startGame()">🔄 Restart</button><button onclick="show('menu')">← Back</button></div>
+<div class="card hidden" id="song"><h2>🎵 A Song For You</h2><p>Upload your own MP3 as <b>song.mp3</b> in the same GitHub folder.</p><audio controls><source src="song.mp3" type="audio/mpeg"></audio><p style="opacity:.6">No song yet? That's okay — everything else works. ❤️</p><button onclick="show('menu')">← Back</button></div>
+<div class="card hidden" id="final"><div class="big">🎂💖🎉</div><h2 style="text-align:center">One Last Thing...</h2><p style="line-height:1.8;text-align:center">Happy belated birthday, Gayatri. ❤️<br><br>I forgot the date, but I don't want you to think that means I forgot about you.<br><br>Sorry for being late. 🥹<br>And thank you for being you. 🫶<br><br><b>Now smile. That's an order. 😌❤️</b></p><button onclick="celebrate()">✨ Click For Magic</button><div id="magic" class="result"></div><button onclick="show('menu')">← Back</button></div>
+<footer>Made with a little guilt, a lot of love, and zero memory of the birthday date 😂❤️</footer>
+</main>
+<script>
+for(let i=0;i<80;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'vw';s.style.top=Math.random()*100+'vh';document.body.appendChild(s)}
+function openGift(){document.getElementById('welcome').classList.add('hidden');document.getElementById('menu').classList.remove('hidden')}
+function show(id){document.querySelectorAll('.card').forEach(x=>x.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');if(id==='game')startGame();scrollTo(0,0)}
+function msg(t){document.getElementById('msg').textContent={smile:'Bas smile karo… haan, wahi wali. 😌❤️',sad:'Bad days are temporary. Take a breath. Tomorrow can be softer. 🫶',miss:'Someone somewhere is probably missing your smile too. So smile. ❤️',late:'Haan date bhool gaya tha 😭😂 But dekho… poori website bana di. 🥹❤️'}[t]}
+let q=0,score=0,qs=[['If you could choose one?',['Unlimited chocolate 🍫','Unlimited sleep 😴','Unlimited happiness 💖'],2],['What should this website end with?',['A boring message','A smile 😊','An exam 😭'],1],['Will you forgive the late birthday wish?',['Yes ❤️','Maybe 😏','I need cake first 🎂'],0]];
+function startGame(){q=0;score=0;render()}function render(){if(q>=qs.length){document.getElementById('qbox').innerHTML='<h3>Game Over 🎉</h3><p>Score: '+score+'/'+qs.length+' ❤️</p>';return}let x=qs[q];document.getElementById('qbox').innerHTML='<h3>Q'+(q+1)+'. '+x[0]+'</h3>'+x[1].map((a,i)=>'<button class="choice" onclick="ans('+i+')">'+a+'</button>').join('')}function ans(i){if(i===qs[q][2])score++;q++;render()}
+function celebrate(){document.getElementById('magic').innerHTML='🎉 ✨ 💖 🎂 ✨ 💕 🎉<br><br>YOU ARE AWESOME, GAYATRI! ❤️';for(let i=0;i<30;i++){let e=document.createElement('b');e.textContent=['🎉','❤️','✨','💕','🎂'][Math.floor(Math.random()*5)];e.style.position='fixed';e.style.left=Math.random()*100+'vw';e.style.top='100vh';e.style.fontSize='25px';e.style.transition='2s';document.body.appendChild(e);setTimeout(()=>e.style.transform='translateY(-110vh) rotate(360deg)',30);setTimeout(()=>e.remove(),2100)}}
+</script></body></html>
